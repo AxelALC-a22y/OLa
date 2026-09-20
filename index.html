@@ -143,8 +143,9 @@
   .sube{transform:translate(-50%, calc(-56%)) scale(1);}
 
   /* 🌌 Galaxia (oculta hasta abrir el regalo) */
-  #galaxia {display:none;position:fixed;inset:0;background:#000;z-index:9999;}
-  canvas { 
+ const nebulaTex=loader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/cube/space/px.jpg');
+scene.background=nebulaTex;
+ { 
   display:block; 
   position:absolute; 
   inset:0; 
@@ -454,7 +455,7 @@ const WORDS=[];
 const baseWords=[
   '💖 Olamor','🌞 Super','🌎 CreativaDigital','✨ Chan-Kun','❤️ Te amo','🌌 Tutoriales de Canto Dibujo Maquillaje Actuacion y Maincra2015',
   '👑 PrincesaRey','🌠 Emo','💫 GuerreradeGalaxias','🔥 DiosadelCaos','🎶 Hacker','🦋 ReviviendoTrends',
-  '🌹 TlajomulcoSON','🐬 Delfincita','🌈 Joys','🌟 Contigo','🎁 Mi razón','🥰Cuidado conel HOYO! '
+  '🌹 TlajomulcoSON','🐬 Delfincita','🌈 Joys','🥰Cuidado conel HOYO! '
 ];
 for(let i=0;i<5;i++){WORDS.push(...baseWords);} // menos copias → menos saturación
 
