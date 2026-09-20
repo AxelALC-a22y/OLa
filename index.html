@@ -395,28 +395,12 @@ function iniciarGalaxia(){
     scene.add(new THREE.Points(g,new THREE.PointsMaterial({size:1.5,color:0xffffff,depthWrite:false})));
   })();
 
-  const coreMat=new THREE.MeshPhongMaterial({color:0x111111,transparent:true,opacity:0.6,shininess:200});
-  const core=new THREE.Mesh(new THREE.SphereGeometry(40,64,64),coreMat);
-  scene.add(core);
-
-  function makeCenterTextTexture(msg){
-    const c=document.createElement('canvas');c.width=512;c.height=512;
-    const ctx=c.getContext('2d');
-    ctx.font='bold 80px Arial';
-    ctx.textAlign='center';
-    ctx.textBaseline='middle';
-    ctx.fillStyle='#ff0033';
-    ctx.shadowColor='#ff66aa';
-    ctx.shadowBlur=50;
-    ctx.fillText(msg,c.width/2,c.height/2);
-    return new THREE.CanvasTexture(c);
-  }
-  const centerTex=makeCenterTextTexture("TE AMO ❤️");
-  const centerMat=new THREE.SpriteMaterial({map:centerTex,transparent:true});
-  const centerSprite=new THREE.Sprite(centerMat);
-  centerSprite.scale.set(60,60,1);
-  scene.add(centerSprite);
-
+  // personalizada
+  const fotoTex = loader.load('https://raw.githubusercontent.com/AxelALC-a22y/OLa/main/tu-foto.jpg');
+  const fotoMat = new THREE.SpriteMaterial({ map: fotoTex, transparent: true });
+  const fotoSprite = new THREE.Sprite(fotoMat);
+  fotoSprite.scale.set(100, 100, 1);
+  scene.add(fotoSprite);
   function makeGlow(size=768,c1='255,160,0',c2='255,60,0'){
     const c=document.createElement('canvas');c.width=c.height=size;
     const g=c.getContext('2d');
