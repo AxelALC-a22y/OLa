@@ -402,10 +402,11 @@ const core = new THREE.Mesh(new THREE.SphereGeometry(40, 64, 64), coreMat);
 scene.add(core);
 
 // Foto encimada en la esfera
-const fotoTex = loader.load('https://raw.githubusercontent.com/AxelALC-a22y/OLa/main/IMG-20260830-WA0007.jpg');
+const textureLoader = new THREE.TextureLoader();
+const fotoTex = textureLoader.load('./IMG-20260830-WA0007.jpg');
 const fotoMat = new THREE.SpriteMaterial({ map: fotoTex, transparent: true });
 const fotoSprite = new THREE.Sprite(fotoMat);
-fotoSprite.scale.set(70, 70, 1); // Tamaño ajustado para que quede centrada sobre la esfera
+fotoSprite.scale.set(80, 80, 1); // Tamaño de la foto
 scene.add(fotoSprite);
  
   function makeGlow(size=768,c1='255,160,0',c2='255,60,0'){
