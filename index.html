@@ -401,12 +401,25 @@ const coreMat = new THREE.MeshPhongMaterial({ color: 0x111111, transparent: true
 const core = new THREE.Mesh(new THREE.SphereGeometry(40, 64, 64), coreMat);
 scene.add(core);
 
-// Foto encimada en la esfera
+
+// Foto
 const textureLoader = new THREE.TextureLoader();
-const fotoTex = textureLoader.load('./IMG-20260830-WA0007.jpg');
-const fotoMat = new THREE.SpriteMaterial({ map: fotoTex, transparent: true });
+const fotoTex = textureLoader.load(
+  'https://raw.githubusercontent.com/AxelALC-a22y/OLa/main/IMG-20260830-WA0007.jpg',
+  function (tex) {
+    tex.needsUpdate = true;
+  }
+);
+
+const fotoMat = new THREE.SpriteMaterial({ 
+  map: fotoTex, 
+  transparent: true,
+  depthTest: false // Asegura que la foto siempre se dibuje POR ENCIMA de la esfera sin quedar oculta dentro
+});
+
 const fotoSprite = new THREE.Sprite(fotoMat);
-fotoSprite.scale.set(80, 80, 1); // Tamaño de la foto
+fotoSprite.scale.set(80, 80, 1); // Tamaño
+fotoSprite.position.set(0, 0, 0);
 scene.add(fotoSprite);
  
   function makeGlow(size=768,c1='255,160,0',c2='255,60,0'){
