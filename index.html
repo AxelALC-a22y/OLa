@@ -396,11 +396,18 @@ function iniciarGalaxia(){
   })();
 
   // personalizada
-  const fotoTex = loader.load('https://raw.githubusercontent.com/AxelALC-a22y/OLa/IMG-20260830-WA0007.jpg');
-  const fotoMat = new THREE.SpriteMaterial({ map: fotoTex, transparent: true });
-  const fotoSprite = new THREE.Sprite(fotoMat);
-  fotoSprite.scale.set(100, 100, 1);
-  scene.add(fotoSprite);
+ // Esfera central original
+const coreMat = new THREE.MeshPhongMaterial({ color: 0x111111, transparent: true, opacity: 0.6, shininess: 200 });
+const core = new THREE.Mesh(new THREE.SphereGeometry(40, 64, 64), coreMat);
+scene.add(core);
+
+// Foto encimada en la esfera
+const fotoTex = loader.load('https://raw.githubusercontent.com/AxelALC-a22y/OLa/main/IMG-20260830-WA0007.jpg');
+const fotoMat = new THREE.SpriteMaterial({ map: fotoTex, transparent: true });
+const fotoSprite = new THREE.Sprite(fotoMat);
+fotoSprite.scale.set(70, 70, 1); // Tamaño ajustado para que quede centrada sobre la esfera
+scene.add(fotoSprite);
+ 
   function makeGlow(size=768,c1='255,160,0',c2='255,60,0'){
     const c=document.createElement('canvas');c.width=c.height=size;
     const g=c.getContext('2d');
