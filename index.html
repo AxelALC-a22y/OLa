@@ -526,8 +526,10 @@ addEventListener('touchend', () => { pinch = 0; }, { passive: true });
   function tick(){requestAnimationFrame(tick);t+=0.01;
     ring1.rotation.z+=0.002;ring2.rotation.z-=0.0015;
     glow.scale.set(500*(1+Math.sin(t*0.4)*0.03),500*(1+Math.sin(t*0.4)*0.03),1);
-    const s=1.0+0.05*Math.sin(t*3);
-    core.scale.set(s,s,s);
+   // 💥 AQUÍ ESTÁ EL CAMBIO CRUCIAL:
+    const s = 1.0 + 0.05 * Math.sin(t * 3);
+    if (typeof core !== 'undefined') core.scale.set(s, s, s);
+    if (typeof fotoSprite !== 'undefined') fotoSprite.scale.set(70 * s, 70 * s, 1);
     textGroup.children.forEach(sp=>{
       sp.userData.theta+=sp.userData.speed;
       sp.position.x=sp.userData.radius*Math.sin(sp.userData.phi)*Math.cos(sp.userData.theta);
