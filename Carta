@@ -71,6 +71,22 @@
         </div>
     </main>
 
+   <!-- Imagenes Chayan -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-25 z-0">
+        <div class="absolute top-[10%] left-[10%] w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-2xl animate-float blur-[1px]">
+            <img src="06a151e7c0e3e78abe7d7000e11834db.jpg" alt="Fondo 1" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute bottom-[15%] right-[10%] w-36 h-36 md:w-56 md:h-56 rounded-full overflow-hidden shadow-2xl animate-float-delayed blur-[1px]">
+            <img src="img/foto2.jpg" alt="Fondo 2" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute top-[60%] left-[5%] w-24 h-24 md:w-36 md:h-36 rounded-full overflow-hidden shadow-2xl animate-float blur-[2px]">
+            <img src="img/foto3.jpg" alt="Fondo 3" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute top-[15%] right-[15%] w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden shadow-2xl animate-float-delayed blur-[1px]">
+            <img src="img/foto4.jpg" alt="Fondo 4" class="w-full h-full object-cover">
+        </div>
+    </div>
+
     <!-- Conejos decorativos inferiores -->
     <div class="absolute bottom-6 left-12 text-3xl sm:text-4xl floating-rabbit-delayed opacity-70 select-none pointer-events-none" aria-hidden="true">
         🐇
